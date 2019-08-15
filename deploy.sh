@@ -1,7 +1,7 @@
 GIT_SHA=$(git rev-parse HEAD)
-docker build -t qiuling21/multi-client:latest -t qiuling21/multi-client:$GIT_SHA ./client/Dockerfile ./client
-docker build -t qiuling21/multi-server:latest -t qiuling21/multi-server:$GIT_SHA ./server/Dockerfile ./server
-docker build -t qiuling21/multi-worker:latest -t qiuling21/multi-worker:$GIT_SHA ./worker/Dokcerfile ./worker
+docker build -t qiuling21/multi-client:latest -t qiuling21/multi-client:$GIT_SHA -f ./client/Dockerfile ./client
+docker build -t qiuling21/multi-server:latest -t qiuling21/multi-server:$GIT_SHA -f ./server/Dockerfile ./server
+docker build -t qiuling21/multi-worker:latest -t qiuling21/multi-worker:$GIT_SHA -f ./worker/Dokcerfile ./worker
 
 docker push qiuling21/multi-client
 docker push qiuling21/multi-server
